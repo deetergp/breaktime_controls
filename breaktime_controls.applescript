@@ -33,10 +33,10 @@ on alfred_script(q)
 
   tell application "BreakTime"
     if q is in e then
-      set msg to "Quit BreakTime"
+      set msg to "Take care till next time."
       quit
     else if q is in s then
-      set msg to "BreakTime started"
+      set msg to "Application started"
       activate
     end if
   end tell
