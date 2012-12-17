@@ -1,9 +1,11 @@
 ### Controls ###
 # Begin your break: bt break
 # End your break: bt work
-# Begin BreakTime: bt start or bt enable
-# Quit BreakTime: bt end or bt disable or bt quit
-# Reset countdown to break: bt reset or bt punt
+# Begin BreakTime: bt start or bt init
+# Quit BreakTime: bt quit or bt exit
+# Disable BreakTime: bt off
+# Enable BreakTime: bt on
+# Reset countdown to break: bt reset or bt reschedule
 
 on sendMsg(msg)
   tell application "System Events"
