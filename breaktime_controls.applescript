@@ -23,13 +23,13 @@ end sendMsg
 on alfred_script(q)
 
   set msg to ""
-  set s to {"start", "enable", "init" }
-  set e to {"quit", "kill", "end", "exit"}
+  set s to {"start", "init" }
+  set e to {"quit", "exit"}
 
 
   set b to {"break"}
   set w to {"work"}
-  set r to {"reset", "punt"}
+  set r to {"reset", "reschedule"}
 
   tell application "BreakTime"
     if q is in e then
