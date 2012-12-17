@@ -31,6 +31,9 @@ on alfred_script(q)
   set w to {"work"}
   set r to {"reset", "reschedule"}
 
+  set dis to {"off"}
+  set en to {"on"}
+
   tell application "BreakTime"
     if q is in e then
       set msg to "Take care till next time."
@@ -47,6 +50,12 @@ on alfred_script(q)
     else if q is in r then
       set msg to "Need… More… TIME!"
       reschedule_break
+    else if q is in dis then
+      set msg to "Disabled"
+      set enabled to not enabled
+    else if q is in en then
+      set msg to "Enabled"
+      set enabled to true
     end if
   end tell
 
