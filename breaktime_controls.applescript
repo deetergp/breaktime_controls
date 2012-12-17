@@ -38,17 +38,16 @@ on alfred_script(q)
     else if q is in s then
       set msg to "Application started"
       activate
-    end if
-    if q is in b then
+    else if q is in b then
       set msg to "Take a break."
       start_break
     else if q is in w
       set msg to "Back to work!"
       end_break
-    end if
-    if q is in r then
-      set msg to "Need… More… Time!"
+    else if q is in r then
+      set msg to "Need… More… TIME!"
       reschedule_break
+    end if
   end tell
 
   if msg is not equal to "" then
