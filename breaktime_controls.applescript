@@ -46,6 +46,9 @@ on alfred_script(q)
       set msg to "Back to work!"
       end_break
     end if
+    if q is in r then
+      set msg to "Need… More… Time!"
+      reschedule_break
   end tell
 
   if msg is not equal to "" then
