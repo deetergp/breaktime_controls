@@ -7,7 +7,7 @@
 
 on sendMsg(msg)
   tell application "System Events"
-    set isRunning to (count of (every process whose bundle identifiedr is "com.Growl.GrowlHelperApp"
+    set isRunning to (count of (every process whose bundle identifier is "com.Growl.GrowlHelperApp")) > 0
   end tell
 
   if isRunning then
@@ -23,20 +23,21 @@ end sendMsg
 on alfred_script(q)
 
   set msg to ""
-  set s to {"start", "enable"}
-  set e to {"end", "quit", "disable"}
-    set b to {"break"}
+  set s to {"start", "enable", "init" }
+  set e to {"quit", "kill", "end", "exit"}
+
+
+  set b to {"break"}
   set w to {"work"}
   set r to {"reset", "punt"}
 
   tell application "BreakTime"
-    if q is in w then
-      end_break
-    else if q is in b then
-      start_break
-    else if q is in r then
-      reschedule_break
-      set msg to "BreakTime rescheduled"
+    if q is in e then
+      set msg to "Quit BreakTime"
+      quit
+    else if q is in s then
+      set msg to "BreakTime started"
+      activate
     end if
   end tell
 end alfred_script
