@@ -23,14 +23,11 @@ end sendMsg
 on alfred_script(q)
 
   set msg to ""
-  set s to {"start", "init" }
+  set s to {"start", "init"}
   set e to {"quit", "exit"}
-
-
   set b to {"break"}
   set w to {"work"}
   set r to {"reset", "reschedule"}
-
   set dis to {"off"}
   set en to {"on"}
 
